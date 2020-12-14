@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Watermarking", "Watermarking\Watermarking.csproj", "{46D94F72-F40A-49B9-9A33-78EEFEC5053B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WatermarkDemo", "WatermarkDemo\WatermarkDemo.csproj", "{0ECDE6AE-FB21-47ED-9D5C-C9B61B5CDA7C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{46D94F72-F40A-49B9-9A33-78EEFEC5053B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46D94F72-F40A-49B9-9A33-78EEFEC5053B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46D94F72-F40A-49B9-9A33-78EEFEC5053B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46D94F72-F40A-49B9-9A33-78EEFEC5053B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ECDE6AE-FB21-47ED-9D5C-C9B61B5CDA7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ECDE6AE-FB21-47ED-9D5C-C9B61B5CDA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ECDE6AE-FB21-47ED-9D5C-C9B61B5CDA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ECDE6AE-FB21-47ED-9D5C-C9B61B5CDA7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
