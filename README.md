@@ -27,10 +27,10 @@ Steps are described with a little more details in the paper, but those above sho
 # Results:
 
 Extracing from uncompressed image:
-![extracted_uncompressed](https://github.com/manvydasu/dwt-dct-watermark-csharp/tree/main/results/extracted_uncompressed.jpg)
+![uncompressed](./results/extracted_uncompressed.jpg "uncompressed")
 
 Extracting from 75% jpeg compressed image:
-![extracted_after_jpeg_75_compression](https://github.com/manvydasu/dwt-dct-watermark-csharp/tree/main/results/extracted_after_jpeg_75_compression.jpg)
+![compressed](./results/extracted_after_jpeg_75_compression.jpg "compressed")
 
 Seems like the result is not very robust to jpeg compression.
 In addition, the original image gets quite visibly distorted if strength of embedding is increased.
