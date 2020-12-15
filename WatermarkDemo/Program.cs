@@ -11,7 +11,7 @@ namespace WatermarkDemo
         static void Main(string[] args)
         {
             var imageFilePath     = "C:/watermark_test/nature.jpg";
-            var watermarkFilePath = "C:/watermark_test/watermark16.jpg";
+            var watermarkFilePath = "C:/watermark_test/watermark32.jpg";
 
             TestDwtWatermarkUsingYiq(imageFilePath, watermarkFilePath);
 
@@ -24,15 +24,15 @@ namespace WatermarkDemo
             using var targetImage     = ReadImageFromFile(targetImagePath);
             using var watermarkImage  = ReadImageFromFile(watermarkImagePath);
 
-            var watermarkedImage = DwtWatermark.EmbedWatermark(targetImage, watermarkImage);
+            var watermarkedImage = DwtDctWatermark.EmbedWatermark(targetImage, watermarkImage);
             WriteImageToFile(watermarkedImage, watermarkedPath);
 
             using var watermarkedImageFromFile = ReadImageFromFile(watermarkedPath);
 
             var extractedWatermarkWithoutSaving =
-                DwtWatermark.ExtractWatermark(watermarkedImage, ReadImageFromFile(watermarkImagePath));
+                DwtDctWatermark.ExtractWatermark(watermarkedImage, ReadImageFromFile(watermarkImagePath));
             var extractedWatermarkFromStoredFile =
-                DwtWatermark.ExtractWatermark(watermarkedImageFromFile, ReadImageFromFile(watermarkImagePath));
+                DwtDctWatermark.ExtractWatermark(watermarkedImageFromFile, ReadImageFromFile(watermarkImagePath));
 
             WriteImageToFile(extractedWatermarkWithoutSaving,  "C:/watermark_test/extracted.jpg");
             WriteImageToFile(extractedWatermarkFromStoredFile, "C:/watermark_test/extracted_from_file.jpg");
@@ -44,15 +44,15 @@ namespace WatermarkDemo
             using var targetImage     = ReadImageFromFile(targetImagePath);
             using var watermarkImage  = ReadImageFromFile(watermarkImagePath);
 
-            var watermarkedImage = DwtWatermark.EmbedWatermarkUsingYiq(targetImage, watermarkImage);
+            var watermarkedImage = DwtDctWatermark.EmbedWatermarkUsingYiq(targetImage, watermarkImage);
             WriteImageToFile(watermarkedImage, watermarkedPath);
 
             using var watermarkedImageFromFile = ReadImageFromFile(watermarkedPath);
 
             var extractedWatermarkWithoutSaving =
-                DwtWatermark.ExtractWatermarkUsingYiq(watermarkedImage, ReadImageFromFile(watermarkImagePath));
+                DwtDctWatermark.ExtractWatermarkUsingYiq(watermarkedImage, ReadImageFromFile(watermarkImagePath));
             var extractedWatermarkFromStoredFile =
-                DwtWatermark.ExtractWatermarkUsingYiq(watermarkedImageFromFile, ReadImageFromFile(watermarkImagePath));
+                DwtDctWatermark.ExtractWatermarkUsingYiq(watermarkedImageFromFile, ReadImageFromFile(watermarkImagePath));
 
             WriteImageToFile(extractedWatermarkWithoutSaving,  "C:/watermark_test/extracted.jpg");
             WriteImageToFile(extractedWatermarkFromStoredFile, "C:/watermark_test/extracted_from_file.jpg");

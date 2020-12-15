@@ -8,7 +8,7 @@ using ColorConverter = DWT.Utilities.ColorConverter;
 
 namespace DWT.WatermarkingAlgorithms
 {
-    public static class DwtWatermark
+    public static class DwtDctWatermark
     {
         private static readonly int DCT_BLOCK_SIZE   = 4;
         private static readonly int WATERMARK_FACTOR = 4;
@@ -102,7 +102,9 @@ namespace DWT.WatermarkingAlgorithms
 
                 subBandTarget.ApplyDataBlock(block, y, x);
 
-                if (x + DCT_BLOCK_SIZE >= greyScaleWatermark.GetLength(1))
+                x += DCT_BLOCK_SIZE;
+                
+                if (x + DCT_BLOCK_SIZE >= embeddingBlockLength)
                 {
                     x =  1;
                     y += DCT_BLOCK_SIZE;
@@ -111,10 +113,6 @@ namespace DWT.WatermarkingAlgorithms
                     {
                         break;
                     }
-                }
-                else
-                {
-                    x += DCT_BLOCK_SIZE;
                 }
             }
 
@@ -165,7 +163,9 @@ namespace DWT.WatermarkingAlgorithms
                 correlationZero[i] = Correlation.Pearson(pnSequenceZero, sequence);
                 correlationOne[i]  = Correlation.Pearson(pnSequenceOne,  sequence);
 
-                if (x + DCT_BLOCK_SIZE >= greyScaleWatermark.GetLength(1))
+                x += DCT_BLOCK_SIZE;
+                
+                if (x + DCT_BLOCK_SIZE >= embeddingBlockLength)
                 {
                     x =  1;
                     y += DCT_BLOCK_SIZE;
@@ -175,13 +175,7 @@ namespace DWT.WatermarkingAlgorithms
                         break;
                     }
                 }
-                else
-                {
-                    x += DCT_BLOCK_SIZE;
-                }
             }
-
-            ;
 
             var reconstructedImage = new int [flattened.Length];
 
