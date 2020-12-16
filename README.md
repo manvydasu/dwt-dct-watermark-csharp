@@ -26,11 +26,15 @@ Steps are described with a little more details in the paper, but those above sho
 
 # Results:
 
-Extracing from uncompressed image:
+Embedded watermark:
+![original](./watermark32.jpg "original")
+
+Extracted from uncompressed image:
 ![uncompressed](./results/extracted_uncompressed.jpg "uncompressed")
 
-Extracting from 75% jpeg compressed image:
+Extracted from 75% jpeg compressed image:
 ![compressed](./results/extracted_after_jpeg_75_compression.jpg "compressed")
+
 
 Seems like the result is not very robust to jpeg compression.
 In addition, the original image gets quite visibly distorted if strength of embedding is increased.
