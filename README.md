@@ -1,4 +1,4 @@
-# DWT DCT Watermark c#
+# DWT DCT Hidden Image Watermarking C#
 Implementation of DWT-DCT image watermarking algorithm using c#
 
 # Theory and implementation:
@@ -12,7 +12,7 @@ https://www.researchgate.net/publication/26621646_Combined_DWT-DCT_digital_image
 * Generate two uncorelated PN sequences.
 * Embed each pixel of watermark image in to mid-band coefficients of DCT blocks using PN sequences. 
 * Apply inverse DCT to each 4x4 block.
-* Apply inverse DWT to produce watermarked iamge.
+* Apply inverse DWT to produce watermarked image.
 
 Watermark retrieval algorithm:
 * Apply DWT on target image to split it into 4 sub-bands.
